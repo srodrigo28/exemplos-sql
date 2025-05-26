@@ -3,7 +3,7 @@ select
   sa.user_ref,
   sa.saldo_atual,
   p.percentual,
-  sa.saldo_atual * p.percentual as rendimento,
+  ( sa.saldo_atual * p.percentual ) 100 as rendimento,
   sum(
     case
       when l.categoria = 'Aplicado' then l.valor
