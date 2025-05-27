@@ -1,0 +1,14 @@
+drop view if exists view_aplicado;
+
+create view view_aplicado as
+select
+  l.user_ref,
+  l.categoria,
+  sum(l.valor) as valor
+from
+  lancamento l
+where
+  l.categoria = 'Aplicado'
+group by
+  l.user_ref,
+  l.categoria;
