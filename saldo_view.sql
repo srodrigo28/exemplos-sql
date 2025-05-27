@@ -4,7 +4,7 @@ create view saldo_view as
 select
   p.user_ref,
   p.email as nome,
-  p.valor_capital + coalesce(sum(l.valor), 0) as valor_capital
+  p.valor_capital + coalesce(sum(l.valor), 0) as saldo_atual
 from
   perfil p
   left join lancamento l on p.user_ref = l.user_ref
