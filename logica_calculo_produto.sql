@@ -1,4 +1,4 @@
-/*
+/*   https://database.build/db/si1assmojgfsylpf
 cria uma tabela de produtos com os campos: 
         id int8,
         nome text,
