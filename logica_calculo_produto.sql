@@ -1,4 +1,4 @@
-/*   https://database.build/db/si1assmojgfsylpf
+/* TESTED   https://database.build/db/si1assmojgfsylpf
 cria uma tabela de produtos com os campos: 
         id int8,
         nome text,
@@ -50,3 +50,20 @@ insert into
   produtos_resumo (total_produtos, total_precos, total_quantidade)
 values
   (0, 0, 0);
+
+
+-- atualização
+alter table produtos_resumo
+add column total_valor numeric default 0;
+
+create
+or replace function atualizar_resumo_produtos () returns trigger as $$
+BEGIN
+    UPDATE produtos_resumo
+    SET total_produtos = (SELECT COUNT(*) FROM produtos),
+        total_precos = (SELECT SUM(preco) FROM produtos),
+        total_quantidade = (SELECT SUM(quantidade) FROM produtos),
+        total_valor = (SELECT SUM(preco * quantidade) FROM produtos);
+    RETURN NEW;
+END;
+$$ language plpgsql;
