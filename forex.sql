@@ -1,5 +1,6 @@
 -- gerando tabela perfil
 -- lembrar de verificar o relacionamento
+-- hello
 
 create table perfil (
   id bigint primary key generated always as identity,
