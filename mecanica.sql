@@ -148,3 +148,28 @@ JOIN
     fabricantes f ON m.fabricante_id = f.id
 JOIN 
     clientes c ON p.cliente_id = c.id;
+
+-- TOTAL ENTRADAS
+create view view_total_entradas as
+select
+  count(*) as total_entradas
+from
+  produtos;
+
+-- total aprovados
+create view view_total_aprovados as
+select
+  count(*) as total_aprovados
+from
+  produtos
+where
+  status = 'aprovado';
+
+-- não aprovou
+create view view_total_reprovou as
+select
+  count(*) as total_reprovou
+from
+  produtos
+where
+  status = 'reprovou';
