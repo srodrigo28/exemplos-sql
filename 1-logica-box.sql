@@ -10,6 +10,7 @@ create table modelos (
 );
 
 -- Inserir fabricantes
+-- Inserir fabricantes
 
 INSERT INTO fabricantes (nome) VALUES 
 ('Toyota'), 
