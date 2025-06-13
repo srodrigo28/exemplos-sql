@@ -1,5 +1,7 @@
 -- Logica DropBox
 -- Logica DropBox
+-- Logica DropBox
+-- Logica DropBox
 
 create table fabricantes (
   id bigint primary key generated always as identity,
