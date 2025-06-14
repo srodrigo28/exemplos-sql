@@ -3,6 +3,8 @@
 -- Logica DropBox
 -- Logica DropBox
 
+-- hello
+
 create table fabricantes (
   id bigint primary key generated always as identity,
   nome text not null
