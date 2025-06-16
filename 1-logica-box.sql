@@ -1,7 +1,4 @@
 -- Logica DropBox
--- Logica DropBox
--- Logica DropBox
--- Logica DropBox
 
 -- hello
 
