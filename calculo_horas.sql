@@ -25,3 +25,13 @@ create trigger calculate_hours before insert
 or
 update on app_data for each row
 execute function update_hours ();
+
+-- view para calculo
+create or replace view view_total_horas_mes as
+select
+  nome,
+  sum(hora_extra) as total_horas_extras_mes
+from
+  app_data
+group by
+  nome;
