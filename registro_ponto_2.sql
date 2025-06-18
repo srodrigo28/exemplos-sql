@@ -194,3 +194,19 @@ group by
 -- nome_ref: Referência ao ID do funcionário.
 -- nome: Nome do funcionário.
 -- funcao: Função do funcionário.
+
+-- ficou show demais agora preciso de um script para apagar pagar todos registros da tabela registro_ponto deixando somente 3 registros.
+-- Manter apenas 3 registros na tabela registro_ponto
+delete from registro_ponto
+where
+  id not in (
+    select
+      id
+    from
+      registro_ponto
+    order by
+      id
+    limit
+      3
+  );
+-- Os registros na tabela registro_ponto foram reduzidos, mantendo apenas 3 registros. Se precisar de mais alguma coisa, estou à disposição para ajudar!
