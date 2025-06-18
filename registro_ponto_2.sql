@@ -161,4 +161,36 @@ set
     when total_horas > interval '8 hours' then total_horas - interval '8 hours'
     else interval '0 hours'
   end;
-As atualizações foram aplicadas com sucesso. Agora, os campos de tempo são truncados para o segundo mais próximo, e o campo total_horas_extra_dia é calculado corretamente, garantindo que não seja nulo. Se precisar de mais alguma coisa, estou à disposição para ajudar!
+
+--
+-- As atualizações foram aplicadas com sucesso. Agora, os campos de tempo são truncados para o segundo mais próximo, e o campo total_horas_extra_dia é calculado corretamente, 
+-- garantindo que não seja nulo. Se precisar de mais alguma coisa, estou à disposição para ajudar!
+
+--essa view precisa me trazer 
+-- total_horas_traba,
+-- otal_horas_extras,
+-- nome_ref,
+-- nome,
+-- funcao
+
+create view view_total_horas as
+select
+  sum(rp.total_horas) as total_horas_traba,
+  sum(rp.total_horas_extra_dia) as total_horas_extras,
+  rp.nome_ref,
+  f.nome,
+  f.funcao
+from
+  registro_ponto rp
+  join funcionario f on rp.nome_ref = f.id
+group by
+  rp.nome_ref,
+  f.nome,
+  f.funcao;
+-- A view view_total_horas foi criada com sucesso. Ela fornece as seguintes informações:
+
+-- total_horas_traba: Total de horas trabalhadas por funcionário.
+-- total_horas_extras: Total de horas extras por funcionário.
+-- nome_ref: Referência ao ID do funcionário.
+-- nome: Nome do funcionário.
+-- funcao: Função do funcionário.
