@@ -4,7 +4,7 @@ CREATE DATABASE TEST;
 
 USE TEST
 
-CREATE TABLE(
+CREATE TABLE perfil (
   int int autoincrement
   nome VARCHAR(200),
   idade int,
@@ -12,6 +12,7 @@ CREATE TABLE(
   senha VARCHAR(30)
 );
 
+select * forma perfil;
 
 CREATE USER(
   int int autoincrement
