@@ -15,6 +15,18 @@ create table modelos (
   fabricante_id bigint references fabricantes (id)
 );
 
+SELECT * FROM modelos
+WHERE nome = 'usuarios';
+
+select * from models;
+
+SELECT *, 
+       (SELECT COUNT(*) FROM modelos WHERE nome = 'usuarios') AS total
+FROM modelos
+WHERE nome = 'usuarios';
+
+SELECT COUNT(*) AS total FROM modelos;
+
 -- Inserir fabricantes
 -- Inserir fabricantes
 
