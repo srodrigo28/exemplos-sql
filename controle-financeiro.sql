@@ -1,7 +1,7 @@
 -- Armazena informações básicas dos usuários.
 -- Categorias:
 
--- Define as categorias para as movimentações financeiras.
+-- Define as categorias para as movimentações financeiras...
 -- Movimentações:
 
 -- Registra todas as entradas e saídas, associando-as a usuários e categorias. Inclui informações sobre contas, valores, datas de vencimento e pagamento.
