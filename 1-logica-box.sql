@@ -1,7 +1,9 @@
 -- Logica DropBox
 -- https://database.build/db/si1assmojgfsylpf
 -- hello mais
-
+-- view
+-- procidures
+-- triggers
 -- flutterflow
 
 create table fabricantes (
