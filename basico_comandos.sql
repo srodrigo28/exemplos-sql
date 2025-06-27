@@ -19,3 +19,5 @@ CREATE USER(
   email VARCHAR(200),
   senha VARCHAR(30)
 );
+
+select * from user;
