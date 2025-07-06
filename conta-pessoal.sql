@@ -1,19 +1,23 @@
 create table usuario (
-  id bigint primary key generated always as identity,
+  user_ref uuid not null,
+  
   nome text not null,
   tipo text not null,
   email text not null,
   telefone text not null,
-  user_ref uuid not null unique,
   saldo_inicial numeric(15, 2) not null,
-  created_at timestamp with time zone default now() not null,
-  updated_at timestamp with time zone default now() not null
+  
+  constraint usuario_pkey primary key (user_ref),
+  created_at timestamp with time zone not null default now(),
+  updated_at timestamp with time zone not null default now(),
+  constraint usuario_user_ref_fkey foreign KEY (user_ref) references auth.users (id)
 );
 
 create table categorias (
   id bigint primary key generated always as identity,
   nome text not null,
   descricao text not null,
+  
   created_at timestamp with time zone default now() not null,
   updated_at timestamp with time zone default now() not null
 );
@@ -30,6 +34,7 @@ create table public.transacoes (
   updated_at timestamp with time zone not null default now(),
   user_id uuid null,
   constraint transacoes_pkey primary key (id),
+  updated_at timestamp with time zone not null default now(),
   constraint transacoes_categoria_id_fkey foreign KEY (categoria_id) references categorias (id),
   constraint transacoes_user_id_fkey foreign KEY (user_id) references auth.users (id),
   constraint transacoes_status_check check (
